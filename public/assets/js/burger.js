@@ -49,14 +49,14 @@ $(function() {
     let currentURL = window.location.origin;
     $.ajax(currentURL + "/api/burgers/" + id, {
       type: "DELETE"
-    }).then(function () {
-      console.log(`id: ${id} is deleted!`);
-      $(".devoured-burger" + id).remove();
-      // Reload the page to get the updated list
-      location.reload();
-    });
-
+    }).then(
+      function () {
+        console.log(`id: ${id} is deleted!`);
+        $(".devoured-burger" + id).remove();
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
   });
 
-});
 });
